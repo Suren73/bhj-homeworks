@@ -70,25 +70,25 @@ class Autocomplete {
 	getMatches(text) {
 
 		const optionsList = this.input.options;
+		const newArray = [];
 
 		for (let i = 0, len = optionsList.length; i < len; i++) {
 
 			if (optionsList[i].text.includes(text)) {
-				return [
-					{
-						text: optionsList[i].text,
-						value: optionsList[i].value
-					}
-				];
+				newArray.push({
+					text: optionsList[i].text,
+					value: optionsList[i].value
+				});
 			}
 		}
 
-		return [
-			{
-				text: 'Чубакка',
-				value: '1'
-			}
-		];
+		return newArray;
+		// [
+		// 	{
+		// 		text: 'Чубакка',
+		// 		value: '1'
+		// 	}
+		// ];
 	}
 }
 
