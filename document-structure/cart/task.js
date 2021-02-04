@@ -41,10 +41,11 @@ productAdd.forEach((value) => {
 		const dataId = value.closest('div.product').dataset.id;
 
 		for (let index = 0, count = productsInCart.length; index < count; index++) {
+
 			if (dataId == productsInCart.item(index).dataset.id) {
-				let num = +productsInCart.item(index).children[1].textContent;
+				let num = +productsInCart.item(index).lastElementChild.textContent;
 				num += productValue;
-				productsInCart.item(index).children[1].textContent = num;
+				productsInCart.item(index).lastChild.textContent = num;
 				return;
 			}
 		}
