@@ -1,7 +1,7 @@
 const activeChat = document.querySelector('.chat-widget');
 const chat_input = document.getElementById('chat-widget__input');
 const messages = document.getElementById('chat-widget__messages');
-const robotMessagrs = ["Добрый день!", "Сам дурак", "Сколько время", "Кто тут", "Где Ваша совесть?"];
+const robotMessages = ["Добрый день!", "Сам дурак", "Сколько время", "Кто тут", "Где Ваша совесть?"];
 let len = robotMessagrs.length;
 
 function getRandomInt(min, max) {
@@ -20,11 +20,12 @@ const onChange = (e) => {
 		</div>
 	`;
 	chat_input.value = "";
+
 	let index = getRandomInt(0, len);
 	messages.innerHTML += `
 	<div class="message">
 			<div class="message__time"> ${time} </div>
-			<div class="message__text"> ${robotMessagrs[index]} </div>
+			<div class="message__text"> ${robotMessages[index]} </div>
 		</div>
 	`;
 }
