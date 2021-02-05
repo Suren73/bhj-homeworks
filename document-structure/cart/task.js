@@ -40,14 +40,13 @@ productAdd.forEach((value) => {
 		const productValue = +value.previousElementSibling.firstElementChild.nextElementSibling.textContent;
 		const dataId = value.closest('div.product').dataset.id;
 
-		for (let index = 0, count = productsInCart.length; index < count; index++) {
+		let elem = Array.from(productsInCart).find((element) => dataId == element.dataset.id);
 
-			if (dataId == productsInCart.item(index).dataset.id) {
-				let num = +productsInCart.item(index).lastElementChild.textContent;
-				num += productValue;
-				productsInCart.item(index).lastChild.textContent = num;
-				return;
-			}
+		if (elem) {
+			let num = +elem.lastElementChild.textContent;
+			num += productValue;
+			elem.lastElementChild.textContent = num;
+			return;
 		}
 
 		cartProduct.dataset.id = dataId;

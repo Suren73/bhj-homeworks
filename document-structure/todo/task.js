@@ -15,7 +15,7 @@ form.addEventListener('submit', (event) => {
 	event.preventDefault();
 	const text = inputText.value;
 
-	if (text !== "") {
+	if (text.trim() !== "") {
 		const div = element.cloneNode(true);
 		tasksList.appendChild(div);
 		div.firstElementChild.innerHTML = text;
