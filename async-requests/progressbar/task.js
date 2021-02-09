@@ -16,6 +16,5 @@ file.addEventListener('submit', (e) => {
 	});
 
 	xhr.send(formData);
-
 })
 
